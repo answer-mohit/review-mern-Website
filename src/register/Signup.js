@@ -20,7 +20,7 @@ setform((preval)=>{
     }
     const handleSubmit=(e)=>{
         e.preventDefault();
-        axios.post("http://localhost:5000/add",{
+        axios.post("https://reviews-website.herokuapp.com/add",{
             user:form.user,
             email:form.email,
             password:form.password
