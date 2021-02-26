@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from 'react'
+import Sidebar from './components/Sidebar';
+import Signup from './register/Signup'
+import Login from './register/Login';
+import "./App.css";
+import Navbar from './components/Navbar';
+import Nav from './components/Nav';
+import Footer from './components/Footer';
 
 function App() {
+  const [sidebar,setsidebar]=useState(false);
+  const sidemenu=()=>{
+    setsidebar(!sidebar);
+  }
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="d-flex">
+      {sidebar&&<Sidebar/>}
+
+      <div className="w-100">
+      <Nav sidemenu={sidemenu} />
+      <Navbar/>
     </div>
-  );
+      </div>
+      <Footer/>
+    </div>
+  )
 }
 
-export default App;
+export default App

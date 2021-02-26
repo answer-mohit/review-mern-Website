@@ -1,0 +1,12 @@
+.form{
+    padding:20px;
+    border-radius: 25px;
+    box-shadow: 10px 10px 20px gray;
+    background-color:darkorchid;
+}
+.form h2{
+    color:white;
+}
+label{
+    color:white
+}
